@@ -1,0 +1,362 @@
+body{
+    overflow:none;
+    margin: 0;
+    padding: 0;
+    background-image: url("../photos/bg.png");
+}
+
+html{
+    filter: invert(0);
+    transition: filter 0.2s;
+}
+.theme-inv{
+    filter: invert();
+}
+
+.main-buttons{
+    z-index: 1;
+    display: flex;
+    justify-content:center;
+    gap: 5px;
+    align-items: center;
+    height: 900px;
+}
+
+.buttons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (max-width: 300px){
+    .main-buttons{
+        height: 90%;
+        width: 90%;
+        gap: 5px;
+    }
+}
+@media (max-width: 400px) {
+    .main-buttons{
+        height: 810px;
+        width: 100%;
+        gap: 5px;
+        flex-direction: column;
+    }
+}
+
+.htb{
+    top: 15px;
+}
+
+.icon{
+    width: 45px;
+    opacity: 0;
+}
+
+/*hometask page elements*/
+
+.taskpage{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.frame{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px 20px;
+    gap: 5px;
+    border-radius: 20px;
+    background: rgb(99, 99, 99);
+}
+
+.filter{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.custom-select {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    user-select: none;
+    position: relative;
+}
+
+.custom-select select {
+    display: none;
+}
+
+.select-selected {
+    background-color: rgb(204, 204, 204);
+    border-radius: 20px;
+    width: 100px;
+    transition: all 0.1s ease-out;
+    display: flex;
+    justify-content: center;
+}
+
+.select-selected:after {
+    position: absolute;
+    content: "";
+    top: 14px;
+    right: 10px;
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    border-color: #000000 transparent transparent transparent;
+}
+
+.select-selected.select-arrow-active:after {
+    border-color: transparent transparent #000000 transparent;
+    top: 7px;
+}
+.select-selected.select-arrow-active{
+    border-radius: 20px 20px 0 0;
+}
+
+.select-items div,.select-selected {
+    color: #000000;
+    padding: 8px 16px;
+    border: 1px solid transparent;
+    border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+    cursor: pointer;
+}
+
+.select-items {
+    background-color: rgb(204, 204, 204);
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    border-radius: 0 0 20px 20px;
+    transition: all 0.15s;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.select-hide {
+    display: none;
+}
+
+.select-items div:hover, .same-as-selected {
+    filter: brightness(0.1);
+}
+.selected{
+    border-radius: 20px 20px 0 0;
+}
+
+.task-item{
+    background-color: rgb(37, 37, 37);
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border-radius: 20px;
+    width: 1000px;
+}
+.task-name{
+    font-size: 30px;
+    margin: 7px;
+    position: relative;
+    top: 2px;
+    background-color: rgb(0, 0, 0);
+    display: inline-block;
+    padding: 5px;
+    border-radius: 20px;
+}
+.task{
+    font-size: 20px;
+    background-color: black;
+    display:table;
+    position: relative;
+    padding: 5px 10px 5px 10px;
+    margin: 5px;
+    border-radius: 20px;
+}
+.task-date{
+    display: inline-block;
+    background-color: black;
+    position: relative;
+    padding: 5px;
+    margin: 0px 0px 5px 5px;
+    border-radius: 20px;
+}
+.task-type{
+    display: inline-block;
+    background-color: black;
+    position: relative;
+    padding: 5px;
+    margin: 2px;
+    border-radius: 20px;
+}
+.task-author{
+    display: inline-block;
+    background-color: black;
+    position: relative;
+    padding: 5px;
+    border-radius: 20px;
+}
+
+.homework{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.pass{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 20px;
+    padding: 20px;
+    background-color: gray;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.text-input{
+    border-style: none;
+    padding: 5px;
+    font-size: 20px;
+    border-radius: 20px;
+    margin: 10px;
+    display: block;
+    color: black;
+}
+.text-input::placeholder{
+    color: black;
+}
+.loginNow{
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: gray;
+    position: fixed;
+    left: 0;
+    bottom: 10px;
+    padding: 5px;
+    border-radius: 0px 20px 20px 0px;
+    font-size: 30px;
+    font-variant: small-caps;
+    user-select: none;
+}
+.taskframe{
+    width: 410px;
+    height: 410px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    position: static;
+    align-self: baseline;
+}
+
+.text{
+    height: 200px;
+    resize: none;
+}
+.tskm{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.tskm-selected{
+    width: 103px;
+}
+
+.custom-tskm{
+    width: 137px;
+}
+
+.date{
+    background-color: rgb(204, 204, 204);
+    border: none;
+    border-radius: 20px;
+    color: rgb(0, 0, 0);
+    padding: 12px 16px;
+    margin: 0px 5px;
+}
+
+.date-tskm{
+    width: 105px;
+    margin: 2px 0;
+}
+
+.taskmanager{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 20px;
+    padding: 10px;
+    background-color: gray;
+}
+
+.page{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+@media (max-width: 600px){
+    .frame{
+        width: 90%;
+        position: relative;
+        top: 10px;
+        padding: 2px 5px;
+    }
+    .filter{
+        position: relative;
+        top:2px;
+    }
+    .task-item{
+        width: 100%;
+    }
+    .date{
+        width: 35%;
+    }
+    .select-selected{
+        width: 60px;
+        font-size: 14px;
+    }
+    .select-items{
+        width: 94px;
+        font-size: 14px;
+    }
+    .page{
+        flex-direction: column;
+        position: relative;
+    }
+    .taskframe{
+        width: 80%;
+        flex-direction: column;
+        align-self: center;
+    }
+    .taskpage{
+        height: 400px;
+    }
+    .tskm-selected{
+        width: 105px;
+    }
+    .tskm-items{
+        width: 139px;
+    }
+    .loginNow{
+        bottom: 10px;
+        font-size: 20px;
+        opacity: 0.7;
+    }
+    .date-tskm{
+        width: 107px;
+        height: 11px;
+        margin: 2px 0;
+    }
+    .text{
+        width: 90%;
+    }
+}
