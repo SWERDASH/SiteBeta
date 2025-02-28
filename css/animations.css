@@ -1,0 +1,53 @@
+.button{
+    animation: buttons 0.5s ease-out;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+}
+
+@keyframes buttons {
+    0%{
+        margin: 0 300px;
+        opacity: 0;
+        filter:blur(10px);
+    }
+    50%{
+        margin: 0 -10px;
+        opacity: 0.01;
+    }
+}
+
+.frame, .taskmanager{
+    animation: buttons 0.75s ease-out;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+}
+
+.icon{
+    animation: icon 0.2s ease-out;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+    animation-delay: 0.35s;
+}
+@keyframes icon {
+    0%{
+        opacity: 0;
+        bottom:-10px;
+    }
+    50%{
+        bottom: 0px;
+    }
+    100%{
+        opacity: 1;
+        bottom: -8px;
+    }
+}
+.editMainButtons, .editMainText, .reset{
+    animation: edit 0.25s ease-in-out;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+}
+@keyframes edit {
+    0%{
+        margin-top: 0;
+    }
+}
